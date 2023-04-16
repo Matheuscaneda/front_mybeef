@@ -1,0 +1,20 @@
+.button {
+    background: #006f35;
+    color: white;
+    border-style:hidden;
+    border-width: 0.1rem;
+    border-radius: 0.5rem;
+    border-color: aliceblue;
+    box-shadow: inset;
+    font: bold 1rem arial,sans-serif;
+    text-shadow: 0.3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    }
+.button:active {
+    opacity: 0.7;
+    transition: 0.1s
+        }
