@@ -32,10 +32,12 @@ input::-webkit-inner-spin-button {
     text-align: center;
     white-space: nowrap;
     background-color: #e9ecef;
-    border: 0.1rem solid #ced4da;
-    border-radius: 0.1rem;
+    border: 0.1rem solid rgb(106, 106, 106);
+    border-radius: 0.2rem;
+    box-shadow: 0px 1px 1px #00000082;
     max-width: 3rem;
     overflow: hidden;
+    cursor: pointer;
 
 }
 
@@ -51,6 +53,11 @@ input::-webkit-inner-spin-button {
 
  
   .teste:active{
-    opacity: 0.7;
-    transition: 0.1s
+    opacity: 0.5;
+    transition: 0.2s
+  }
+  
+  .disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
   }

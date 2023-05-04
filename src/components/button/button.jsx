@@ -1,7 +1,10 @@
-import './button.css'
+import './button.css';
+import { Link } from 'react-router-dom';
 
 export const Button = (props) => {
     return(
-    <button type="button" class="button">{props.texto}</button>
+
+        <Link type="button" class={`button ${props.props_style}`} to={props.link}>{props.texto}</Link> 
+
     );
 }
