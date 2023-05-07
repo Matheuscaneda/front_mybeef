@@ -9,8 +9,11 @@ function Inicial() {
   return (
 
         <div className = "content">
-        <Imagem src={logo} alt="Exemplo de imagem"/>
-        <h1> Bem-vindo ao Simulador Mybeef </h1>
+          <div className='flex_line'>
+            <h1 className='paddint_top'> Bem-vindo ao Simulador Mybeef </h1>
+            <Imagem src={logo} alt="Exemplo de imagem"/>
+            
+            </div>
         <div className="paragraphs">
           <p> O Simulador Mybeef é uma ferramenta para apoio a tomada de decisões de produtores rurais,
              que visa auxiliar na compreensão do efeito que indicadores zootécnicos exercem sobre o desempenho de sistemas

@@ -1,74 +1,115 @@
 /* eslint-disable react/jsx-pascal-case */
 import '../App.css';
 import { Button } from '../components/button/button'
-import { Button_Increment } from '../components/button_increment/button_increment';
+import { Chart } from "react-google-charts";
 
 
-function simulacao_base() {
+export const data = [
+    ["Categoria", "Percentual"],
+    ["Novilhas 3 anos", 11],
+    ["Novilhas 2 anos", 2],
+    ["Novilhas 1 anos", 2],
+    ["Novilhos 3 anos", 2],
+    ["Novilhos 2 anos", 7],
+    ["Novilhos 1 ano", 7],
+    ["Terneiros", 7],
+    ["Touros", 7],
+    ["Vacas", 7],
+  ];
+
+export const options = {
+    title: "Composição do rebanho",
+  };
+  
+
+function estoque_animal() {
   return (
-<div className="content">
+<div className="parent_var_1_">
+    <div className='div1'>
         <h1> Estoque Animal </h1>
         <div className="paragraphs">
           <p> Visualização númerica e gráfica da composição do rebanho </p>
         </div>
-        <div className="flex_line">
-            <p> Categoria</p>
-            <p> Percentual </p>
-            <p> Unidades </p>
-        </div>
-        <div className="flex_line">
-            <p> Novilhas 3 anos </p>
-            <p> 5% </p>
-            <p> 1000 </p>
-        </div>
-        <div className="flex_line">
-            <p> Novilhas 2 anos </p>
-            <p> 5% </p>
-            <p> 1000 </p>
-        </div>
-        <div className="flex_line">
-            <p> Novilha 1 ano </p>
-            <p> 5% </p>
-            <p> 1000 </p>
-        </div>
-        <div className="flex_line">
-            <p> Novilhos 3 anos </p>
-            <p> 5% </p>
-            <p> 1000 </p>
-        </div>
-        <div className="flex_line">
-            <p> Novilhos 2 anos </p>
-            <p> 5% </p>
-            <p> 1000 </p>
-        </div>
-        <div className="flex_line">
-            <p> Novilho 1 ano </p>
-            <p> 5% </p>
-            <p> 1000 </p>
-        </div>
-        <div className="flex_line">
-            <p> Vacas </p>
-            <p> 5% </p>
-            <p> 1000 </p>
-        </div>
-        <div className="flex_line">
-            <p> Touros </p>
-            <p> 5% </p>
-            <p> 1000 </p>
-        </div>
-        <div className="flex_line">
-            <p> Terneiros(as) </p>
-            <p> 5% </p>
-            <p> 1000 </p>
-        </div>
+    </div>
 
-        <div className="flex_line">
+    <div className='div2_var_1_ flex_jc_center'>
+    <table className="table">
+      <thead>
+        <tr>
+          <th>Categoria</th>
+          <th>Percentual</th>
+          <th>Unidades</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td >Novilhas 3 anos</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td>Novilhas 2 anos</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td>Novilhas 1 ano</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td>Novilhos 3 anos</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td>Novilhos 2 anos</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td>Novilhos 1 ano</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td>Vacas</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td>Terneiros</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td>Touros</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+      </tbody>
+    </table>
+   </div>
+    <div className='div3_var_1_'>
+        <Chart
+          chartType="PieChart"
+          data={data}
+          options={options}
+          width={"100%"}
+          height={"400px"}
+        />
+    </div>
+    <div className='div4_var_1_'>
+
+   
+        <div className="flex_line flex_jc_center">
 
             <Button texto='Voltar' props_style="secondary" link="/resultado_simulacao"/>  
-        </div>
+        </div> 
+    </div>
         </div>
     
     );
 }
 
-export default simulacao_base;
+export default estoque_animal;

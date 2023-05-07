@@ -12,7 +12,7 @@ function Menu_principal() {
         <div className='div1_var_1_'>
             <h1> Menu de opções </h1>
         </div>
-    <div className='div2_var_1_'>
+    <div className='div2_var_1_ flex_wrap'>
         <div className="flex_line_var_1_ flex_jc_evenly">
             <div className='flex_block_var_1_ bg-grey'>
                 <p> Para simular a variação individual dos indicadores </p>
@@ -21,7 +21,7 @@ function Menu_principal() {
         </div>
         <div className="flex_line_var_1_ flex_jc_evenly">
             <div className='flex_block_var_1_ bg-grey'>
-                <p> Para descobrir o limite de investimento entre dois cenários</p>
+                <p> Para calcular o limite de investimento entre dois cenários</p>
                 <Button texto='Calcular!' props_style="primary" link="/limite_investimento"/>
             </div>
         </div>
@@ -38,11 +38,11 @@ function Menu_principal() {
             </div>
         </div>
     </div>
-    <div className='div4_var_1_'></div>
+    <div className='div4_var_1_'>
         <div className="flex_line_var_1_ flex_jc_center">
             <Button texto='Voltar' props_style="secondary" link="/resultado_simulacao"/>
         </div>
-
+    </div>
         </div>
     
     );

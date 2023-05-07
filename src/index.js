@@ -17,6 +17,7 @@ import Resultado_meta_novilho from './routes/resultado_meta_novilho';
 import Resultado_simulacao from './routes/resultado_simulacao';
 import Simulacao_base from './routes/simulacao_base';
 import Inicial from './routes/inicial';
+import Sensibilidade from './routes/sensibilidade';
 
 
 const router = createBrowserRouter([
@@ -75,7 +76,11 @@ const router = createBrowserRouter([
     {
       path: "/simulacao_base",
       element: <Simulacao_base/>
-    }
+    },
+    {
+      path: "/sensibilidade",
+      element: <Sensibilidade/>
+    },
   ]
 },
 

@@ -16,103 +16,130 @@ function calibrar() {
         </div>
 
         <div className="div2_var_1_">  
-            <div className="flex_line_var_1_ flex_jc_spacebetween">
-                <div className='flex_block'>
+            <div className="flex_line_var_1_ flex_jc_spacebetween ">
+                <div className='flex_block width_50 bg-grey margin_bot'>
                     <p> Percentual de touros</p>
-                    <Button_Increment min={0} max={100} step={0.5} defaultValue={3}/>
+                    <Button_Increment min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
                 </div>
             </div>
             <div className="flex_line_var_1_ flex_jc_spacebetween">
-                <div className='flex_block'>
+                <div className='flex_block width_50 bg-grey margin_bot'>
                     <p> Percentual de descarte de vacas</p>
-                    <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
+                    <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
                 </div>
             </div>
             <div className="flex_line_var_1_ flex_jc_spacebetween">
-                <div className='flex_block'>
+                <div className='flex_block width_50 bg-grey margin_bot'>
                     <p> Percentual de descarte de touros </p>
-                    <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
+                    <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
                 </div>
             </div>
         </div>
 
         <div className="div3_var_1_">         
-            <div className="flex_line">
-                <div className='flex_block_var_1_ margin_align'>
-                <p> Peso médio </p>
-                <p> Venda (Kg) </p>
-                </div>
-            </div>
         
-        <div className="flex_line_var_1_ ">
-            <div className='flex_block flex_wrap'>
-                <p> Novilhas com 3 anos </p>
-                <div className='flex_block flex_nowrap'>
-                <div className='flex_block'> <p> Peso médio </p>
+        <div className="flex_line  flex_jc_center width_50">
+            <div className='flex_block flex_wrap flex_jc_center bg-grey'>
+                    <p className='p_center margin_bot'> Novilhas com 3 anos </p>
+                    
+                    <div className='flex_block'> 
+                        <p> Peso médio </p>
+                        <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true} />
+                    </div>
+                    
+                    <div className='flex_block'>
+                        <p> Peso venda </p>
+                        <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                    </div>
+            </div>
+        </div>
+
+        <div className="flex_line  flex_jc_center width_50">
+            <div className='flex_block flex_wrap flex_jc_center bg-grey'>
+                    <p  className='p_center margin_bot'> Novilhas com 2 anos </p>
+
+                    <div className='flex_block'> 
+                        <p> Peso médio </p>
+                        <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                    </div>
+
+                    <div className='flex_block'>
+                        <p> Peso venda </p>
+                        <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                    </div>
+            </div>
+        </div>
+
+        <div className="flex_line  flex_jc_center width_50">
+            <div className='flex_block flex_wrap flex_jc_center bg-grey'>
+                <p  className='p_center margin_bot'> Novilhas com 1 ano </p>
+                        <div className='flex_block'> 
+                            <p> Peso médio </p>
+                            <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                        </div>
                 
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
+                        <div className='flex_block'>
+                            <p> Peso venda </p>
+                            <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                        </div>
                 </div>
-                <div className='flex_block'>
-                <p> Peso médio </p>
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
+        </div>
+
+        <div className="flex_line  flex_jc_center width_50">
+            <div className='flex_block flex_wrap flex_jc_center bg-grey'>
+                <p  className='p_center margin_bot'> Novilhos com 3 anos </p>
+                        <div className='flex_block'> 
+                            <p> Peso médio </p>
+                            <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                        </div>
+                        <div className='flex_block'>
+                            <p> Peso venda </p>
+                            <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                        </div>
                 </div>
-                </div>
+            </div>
+
+
+        <div className="flex_line  flex_jc_center width_50">
+            <div className='flex_block flex_wrap flex_jc_center bg-grey'>
+                <p  className='p_center margin_bot'> Novilhos com 2 anos </p>
+                    <div className='flex_block'> 
+                        <p> Peso médio </p>
+                        <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                    </div>
+                    <div className='flex_block'>
+                        <p> Peso venda </p>
+                        <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                    </div>
             </div>
         </div>
 
-        <div className="flex_line_var_1_">
-            <div className='flex_block'>
-                <p> Novilhas com 2 anos </p>
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
-
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
+        <div className="flex_line  flex_jc_center width_50">
+            <div className='flex_block flex_wrap flex_jc_center bg-grey'>
+                <p  className='p_center margin_bot'> Novilho com 1 ano </p>
+                    <div className='flex_block'> 
+                        <p> Peso médio </p>
+                        <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                    </div>
+                    <div className='flex_block'>
+                        <p> Peso venda </p>
+                        <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                    </div>
             </div>
         </div>
 
-        <div className="flex_line_var_1_">
-            <div className='flex_block'>
-                <p> Novilhas com 1 ano </p>
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
-
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
+        <div className="flex_line  flex_jc_center width_50">
+            <div className='flex_block flex_wrap flex_jc_center bg-grey'>
+                <p  className='p_center margin_bot'> Terneiros(as) </p>
+                    <div className='flex_block'> 
+                        <p> Peso médio </p>
+                        <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                    </div>
+                    <div className='flex_block'>
+                        <p> Peso venda </p>
+                        <Button_Increment  min={0} max={100} step={0.5} defaultValue={3} estado={true}/>
+                    </div>
             </div>
-        </div>
-
-        <div className="flex_line_var_1_">
-            <div className='flex_block'>
-                <p> Novilhos com 3 anos </p>
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
-
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
-            </div>
-        </div>
-
-        <div className="flex_line_var_1_">
-            <div className='flex_block'>
-                <p> Novilhos com 2 anos </p>
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
-
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
-            </div>
-        </div>
-
-        <div className="flex_line_var_1_">
-            <div className='flex_block'>
-                <p> Novilho com 1 ano </p>
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
-
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
-            </div>
-        </div>
-
-        <div className="flex_line_var_1_">
-            <div className='flex_block'>
-                <p> Terneiros(as) </p>
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
-                <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}/>
-            </div>
-        </div>
-        
         </div>
 
         <div className='div4'>
@@ -122,7 +149,7 @@ function calibrar() {
             </div>
         </div>
     </div>
-
+</div>
     
     );
 }

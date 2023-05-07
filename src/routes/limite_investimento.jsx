@@ -57,7 +57,7 @@ function limite_investimento() {
             </div>
             <div className="flex_line flex_jc_spacebetween bg-grey">
                 <div className="flex_block width">
-                    <p> Valor de venda</p>
+                    <p> Preço de venda (R$)</p>
                     <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}  estado={false}/>
                 </div>
             </div>
@@ -105,7 +105,7 @@ function limite_investimento() {
             </div>
             <div className="flex_line flex_jc_spacebetween bg-grey">
                 <div className="flex_block width">
-                    <p> Valor de venda </p>
+                    <p> Preço de venda (R$) </p>
                     <Button_Increment  min={0} max={100} step={0.5} defaultValue={3}  estado={true}/>
                 </div>
             </div>
