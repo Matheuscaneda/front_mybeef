@@ -17,15 +17,15 @@ const styles = {
   }
 };
 
-export const Speedometer = ({ id, value, title }) => {
+export const Speedometer = ({ id, value, title, suffix, max, min }) => {
   return (
     <div className="dials">
       <ReactSpeedometer
-        maxValue={120}
-        minValue={0}
+        maxValue={max || 120}
+        minValue={min || 0}
         height={190}
         width={290}
-        value={value}
+        value={value.toFixed(2)}
         needleTransition="easeQuadIn"
         needleTransitionDuration={1000}
         needleColor="red"
