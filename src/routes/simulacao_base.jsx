@@ -4,12 +4,13 @@ import "../App.css";
 import { Button } from "../components/button/button";
 import { Button_Increment } from "../components/button_increment/button_increment";
 import AlertDialog from "../components/alert/Alert";
-import { Simulador } from "../utils/simulador";
-import { useNavigate } from "react-router-dom/dist";
+import { useNavigate, useLocation} from "react-router-dom/dist";
 
 function simulacao_base() {
+
+  const { state } = useLocation();
   const navigate = useNavigate();
-  const simulador = new Simulador();
+  const simulador = state.simulador;
 
   const [percentualDesmame, setPercentualDesmame] = useState(simulador.desmame);
   const [percentualMortalidade, setPercentualMortalidade] = useState(
@@ -33,6 +34,18 @@ function simulacao_base() {
     navigate("/resultado_simulacao", { state: { simulador: simulador } });
   };
 
+  const handleSubmit_test = () => {
+    simulador.set_base_info({
+      desmame: percentualDesmame,
+      mortalidade: percentualMortalidade,
+      touros: percentualTouros,
+      idade_entoure: idadeEntoure,
+      idade_venda: idadeVenda,
+      lotacao: lotacaoHectare,
+    });
+    navigate("/calibrar", { state: { simulador: simulador } });
+  }
+
   return (
     <div class="parent">
       <div className="div1">
@@ -55,7 +68,7 @@ function simulacao_base() {
           <Button_Increment
             min={0}
             max={100}
-            step={5}
+            step={1}
             value={percentualDesmame}
             setValue={setPercentualDesmame}
           />
@@ -68,7 +81,7 @@ function simulacao_base() {
           <Button_Increment
             min={0}
             max={100}
-            step={5}
+            step={1}
             value={percentualMortalidade}
             setValue={setPercentualMortalidade}
           />
@@ -81,7 +94,7 @@ function simulacao_base() {
           <Button_Increment
             min={1}
             max={100}
-            step={10}
+            step={1}
             value={percentualTouros}
             setValue={setPercentualTouros}
           />
@@ -133,10 +146,12 @@ function simulacao_base() {
         <Button
           texto="Calibrar"
           props_style="primary"
-          link="/calibrar"
-          params={{ simulador: simulador }}
+          onClick={handleSubmit_test}
         />
-        <Button texto="Calcular" props_style="primary" onClick={handleSubmit} />
+        <Button 
+          texto="Calcular" 
+          props_style="primary" 
+          onClick={handleSubmit} />
       </div>
     </div>
   );

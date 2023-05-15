@@ -4,6 +4,8 @@ import { Button } from '../components/button/button';
 import { Button_Increment } from '../components/button_increment/button_increment';
 import { useState } from 'react';
 import { Chart } from "react-google-charts";
+import { useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export const data = [
     ["x", ""],
@@ -30,12 +32,24 @@ export const data = [
   };
 
 function Sensibilidade() {
+  const { state } = useLocation();
+  const navigate = useNavigate();
+  const simulador = state.simulador;
+
 
     const [opcao, setOpcao] = useState('taxa-desmame');
 
     const handleOpcaoChange = (event) => {
       setOpcao(event.target.value);
     };
+
+    const [ValorMinimo, setValorMinimo] = useState(1);
+    const [ValorMaximo, setValorMaximo] = useState(1);
+
+    const handleSubmit_3 = () => {
+      navigate("/menu_principal", { state: { simulador: simulador } });
+    };
+
     return (
         <div class="parent_var_1_">
               <div className="div1_var_1_"> 
@@ -46,7 +60,7 @@ function Sensibilidade() {
                   </div>
               </div>
             <div className="div2_var_1_">
-                <div className='flex_line flex_jc_spacebetween flex_wrap min_width'>
+                <div className='flex_line flex_jc_spacebetween flex_wrap  width'>
                 <div className='flex_block_column'>
                 <h2>Selecione uma opção:</h2>
                     <label>
@@ -79,7 +93,7 @@ function Sensibilidade() {
                           onChange={handleOpcaoChange}
                           className='input'
                         />
-                        Idade de acasalamento
+                        Idade de entoure
                     </label>
                     
                     <label>
@@ -94,22 +108,66 @@ function Sensibilidade() {
                     </label>
                 </div>
 
-                <div className='flex_block_column flex_jc_evenly'>
+                {opcao === "taxa-desmame" && <div className='flex_block_column flex_jc_evenly'>
 
                 
                     <div className='flex_block bg-grey'>
                         <p> Desmame mínimo </p>
-                        <Button_Increment min={0.1} max={20} step={0.1} defaultValue={1}  estado={true}/>
+                        <Button_Increment min={0} max={100} step={1} value={ValorMinimo} setValue={setValorMinimo}/>
+
                     </div>
 
                     <div className='flex_block bg-grey'>
                         <p> Desmame máximo </p>
-                        <Button_Increment min={0.1} max={20} step={0.1} defaultValue={1}  estado={true}/>
+                        <Button_Increment min={0} max={100} step={1} value={ValorMaximo} setValue={setValorMaximo}/>
                     </div>
+                </div>
+                }
 
-                </div>
-                </div>
-            </div>
+                {opcao === 'taxa-mortalidade' && 
+                  <div className='flex_block_column flex_jc_evenly'>
+                      <div className='flex_block bg-grey'>
+                          <p> Mortalidade mínima </p>
+                          <Button_Increment min={0} max={100} step={1} value={ValorMinimo} setValue={setValorMinimo}/>
+                      </div>
+
+                      <div className='flex_block bg-grey'>
+                          <p> Mortalidade máxima </p>
+                          <Button_Increment min={0} max={100} step={1} value={ValorMaximo} setValue={setValorMaximo}/>
+                      </div>
+
+                      </div>
+                }
+                {opcao === 'idade-abate' && 
+                  <div className='flex_block_column flex_jc_evenly'>
+                      <div className='flex_block bg-grey'>
+                          <p> Idade abate mínima </p>
+                          <Button_Increment min={0} max={100} step={1} value={ValorMinimo} setValue={setValorMinimo}/>
+                      </div>
+
+                      <div className='flex_block bg-grey'>
+                          <p> Idade bate máxima </p>
+                          <Button_Increment min={0} max={100} step={1} value={ValorMaximo} setValue={setValorMaximo}/>
+                      </div>
+
+                      </div>
+                }
+                {opcao === 'idade-acasalamento' && 
+                  <div className='flex_block_column flex_jc_evenly'>
+                      <div className='flex_block bg-grey'>
+                          <p> Idade de entoure mínima </p>
+                          <Button_Increment min={0} max={100} step={1} value={ValorMinimo} setValue={setValorMinimo}/>
+                      </div>
+
+                      <div className='flex_block bg-grey'>
+                          <p> Idade de entoure máxima </p>
+                          <Button_Increment min={0} max={100} step={1} value={ValorMaximo} setValue={setValorMaximo}/>
+                      </div>
+
+                      </div>
+                }
+                      </div>
+                  </div>
               
             <div className="div3_var_1_">
                 <Chart
@@ -124,7 +182,11 @@ function Sensibilidade() {
               
               <div className="div4_var_1_ flex_line flex_jc_center">
 
-                    <Button texto='Voltar' props_style="secondary" link="/menu_principal"/> 
+              <Button
+                texto="Voltar"
+                props_style="secondary"
+                onClick={handleSubmit_3}
+              /> 
               </div>
                   
   

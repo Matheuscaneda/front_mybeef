@@ -16,7 +16,7 @@ function resultado_limite_investimento() {
         <div className='div2'>
             <div className="flex_line">
                 <div className="flex_block ">
-                    <p> Cenário Base</p>
+                    <p className='strong'> Cenário Base</p>
                     <Button_Increment min={0} max={100} step={0.5} defaultValue={3}/>
                 </div>
             </div>
@@ -24,19 +24,21 @@ function resultado_limite_investimento() {
         <div className='div3'>
             <div className="flex_line">
                 <div className="flex_block ">
-                    <p> Cenário Futuro</p>
+                    <p className='strong'> Cenário Futuro</p>
                     <Button_Increment min={0} max={100} step={0.5} defaultValue={3}/>
                 </div>
-            </div>
-        </div>
-    
-        <div className='div4'>    
+            </div>        
             <div className="flex_line">
                 <div className="flex_block">
                     <p> Limite de investimento</p>
                     <Button_Increment min={0} max={100} step={0.5} defaultValue={3}/>
                 </div>
             </div>
+        </div>
+    
+        <div className='div4'>    
+    
+        
             <div className="flex_line width flex_jc_spacebetween">
                     <Button texto='Estoque animal' props_style="primary" link="/estoque_animal"/> 
                     <Button texto='Voltar' props_style="secondary" link="/limite_investimento"/>  

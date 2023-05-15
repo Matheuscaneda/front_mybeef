@@ -331,7 +331,7 @@ label{
   list-style: circle;
   list-style-position: inside;
   padding: 0;
-  margin: 0;
+  margin: 5px;
 }
 
 ul{
@@ -356,24 +356,30 @@ ul{
 
 li{
   text-align:justify;
-  margin: 0 8px;
+  margin: 5px 8px;
   font-size: 20px;
   font-weight: 550;
   width: 100%;
 }
 .paragraphs {
   width:100%;
-  margin: 10px auto;
+  margin: 20px;
 }
 
 .margin_bot{
   margin-bottom: 5px;
 }
-
+.margin_top{
+  margin-top: 20px;
+}
 .paddint_top{
   padding-top: 2.5rem;
 }
 
 .margin_custom{
   margin: 2px;
+}
+
+.strong {
+  font-weight: bold;
 }

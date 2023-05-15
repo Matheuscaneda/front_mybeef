@@ -18,7 +18,8 @@ import Resultado_simulacao from './routes/resultado_simulacao';
 import Simulacao_base from './routes/simulacao_base';
 import Inicial from './routes/inicial';
 import Sensibilidade from './routes/sensibilidade';
-
+import Tabela_produtividade from './routes/gera_tabela_produtividade';
+import Resultado_Tabela_produtividade from './routes/result_tabela_produtividade';
 
 const router = createBrowserRouter([
 {
@@ -80,6 +81,14 @@ const router = createBrowserRouter([
     {
       path: "/sensibilidade",
       element: <Sensibilidade/>
+    },
+    {
+      path: "/gera_tabela_produtividade",
+      element: <Tabela_produtividade/>
+    },
+    {
+      path: "/result_tabela_produtividade",
+      element: <Resultado_Tabela_produtividade/>
     },
   ]
 },

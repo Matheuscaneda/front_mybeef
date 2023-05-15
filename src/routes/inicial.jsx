@@ -1,11 +1,21 @@
 /* eslint-disable react/jsx-pascal-case */
 import '../App.css';
-import AlertDialog from '../components/alert/Alert';
 import { Button } from '../components/button/button'
 import Imagem from '../components/img/img';
 import logo  from '../img/logo_mybeef.png';
+import { Simulador } from "../utils/simulador";
+import { useNavigate } from "react-router-dom/dist";
+
 
 function Inicial() {
+
+  const navigate = useNavigate();
+  const simulador = new Simulador();
+
+  const handleSubmit = () => {
+    navigate("/simulacao_base", { state: { simulador: simulador } });
+  }
+
   return (
 
         <div className = "content">
@@ -27,7 +37,11 @@ function Inicial() {
         </div>
         
         <div className="flex_line flex_jc_center">
-          <Button texto='Começar a simular!' props_style="primary" link="/simulacao_base"/>
+          <Button 
+            texto="Começar a simular!" 
+            props_style="primary" 
+            onClick={handleSubmit}
+          />
         </div>
         </div>
     

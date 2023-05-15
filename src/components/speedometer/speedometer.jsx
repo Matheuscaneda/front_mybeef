@@ -17,7 +17,7 @@ const styles = {
   }
 };
 
-export const Speedometer = ({ id, value, title, suffix, max, min }) => {
+export const Speedometer = ({ id, value, title, suffix, max, min, type }) => {
   return (
     <div className="dials">
       <ReactSpeedometer
@@ -28,6 +28,7 @@ export const Speedometer = ({ id, value, title, suffix, max, min }) => {
         value={value.toFixed(2)}
         needleTransition="easeQuadIn"
         needleTransitionDuration={1000}
+        currentValueText= {type?"${value} %":"${value} Kgs/Ha"}
         needleColor="red"
         startColor="red"
         segments={10}
