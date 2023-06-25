@@ -1,0 +1,25 @@
+{
+  "boilerplate": "react-pwa",
+  "platform": "javascript",
+  "label": "Progressive Web App",
+  "description": "Código-fonte simulador-mybeef.",
+  "references": [
+    { "label": "Site na Google Developers sobre PWAs", "url": "https://web.dev/progressive-web-apps/" }
+  ],
+  "maintainers": [
+    { "name": "Matheus Caneda Correia", "email": "matheuscacorreia@gmail.com", "phone": "+55 (53) 9 8441-6663" }
+  ],
+  "variables": {
+    "default": [
+      { "name": "PORT", "type": "PORT" },
+      { "name": "MYBEEF_APP_URL", "type": "TEXT" },
+      { "name": "MYBEEF_APP_API", "type": "TEXT" },
+      { "name": "MYBEEF_APP_EMAIL", "type": "TEXT", "value": "sac@embrapa.br" },
+      { "name": "MYBEEF_APP_WHATSAPP", "type": "TEXT", "value": "53984416663" }
+    ],
+    "alpha": [],
+    "beta": [],
+    "release": []
+  },
+  "orchestrators": [ "DockerCompose", "DockerSwarm" ]
+}

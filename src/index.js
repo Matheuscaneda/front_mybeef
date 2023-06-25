@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
+import * as Sentry from "@sentry/react";
+
 
 import Atingir_metas from './routes/atingir_metas';
 import Calibrar from './routes/calibrar';
@@ -20,6 +22,51 @@ import Inicial from './routes/inicial';
 import Sensibilidade from './routes/sensibilidade';
 import Tabela_produtividade from './routes/gera_tabela_produtividade';
 import Resultado_Tabela_produtividade from './routes/result_tabela_produtividade';
+import { MatomoProvider, createInstance } from '@datapunt/matomo-tracker-react';
+
+
+Sentry.init({
+  dsn: "https://8344e354c1b84aeab25402bb75c8a20e@bug.embrapa.io/95",
+  integrations: [
+    new Sentry.BrowserTracing({
+      // Set `tracePropagationTargets` to control for which URLs distributed tracing should be enabled
+      tracePropagationTargets: ["localhost", /^https:\/\/yourserver\.io\/api/],
+    }),
+    new Sentry.Replay()
+  ],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+
+  // Capture Replay for 10% of all sessions,
+  // plus for 100% of sessions with an error
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1.0,
+});
+
+
+
+const instance = createInstance({
+  urlBase: 'https://LINK.TO.DOMAIN',
+  siteId: 113,
+  userId: 'UID76903202', // optional, default value: `undefined`.
+  trackerUrl: 'https://LINK.TO.DOMAIN/tracking.php', // optional, default value: `${urlBase}matomo.php`
+  srcUrl: 'https://LINK.TO.DOMAIN/tracking.js', // optional, default value: `${urlBase}matomo.js`
+  disabled: false, // optional, false by default. Makes all tracking calls no-ops if set to true.
+  heartBeat: { // optional, enabled by default
+    active: true, // optional, default value: true
+    seconds: 10 // optional, default value: `15
+  },
+  linkTracking: false, // optional, default value: true
+  configurations: { // optional, default value: {}
+    // any valid matomo configuration, all below are optional
+    disableCookies: true,
+    setSecureCookie: true,
+    setRequestMethod: 'POST'
+  }
+})
 
 const router = createBrowserRouter([
 {
@@ -98,9 +145,11 @@ const router = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router}/>
-  </React.StrictMode>
+  <MatomoProvider value={instance}>
+    <React.StrictMode>
+      <RouterProvider router={router}/>
+    </React.StrictMode>
+  </MatomoProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
